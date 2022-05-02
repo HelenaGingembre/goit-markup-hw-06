@@ -433,20 +433,23 @@
             </div>
             <div class="form-footer">
                 <p class="social-footer-title">Подпишитесь на рассылку</p>
-                <form name="email-send-form" action="" class="email-input" autocomplete="on">
+                <form name="email-send-form"  class="email-input" autocomplete="on">
                    
-                    <!-- <label for="user_email" class="footer-email">E-mail</label>
-                    <input type="email" name="email" id="user_email" /> -->
+                     <!-- <label for="user_email" class="footer-email"></label> -->
                     
-                    <label class="footer-email">
-                        E-mail
-                        <input type="email" name="email" />
-                    </label>
-                    <button clas="btn-email-send" type="submit">Подписаться
+                     <input class="footer-input-email"
+                    type="email" 
+                    name="email" id="user_email"
+                    placeholder="E-mail" /> 
+                    
+                   
+                    <button class="btn-email-send" type="submit">
+                        <span>Подписаться</span> 
                         <svg class="footer-form-icon" width="24" height="24">
                             <use href="./images/symbol-defs.svg#icon-send"></use>
                         </svg>
                     </button>
+                    
                 </form>
             
             </div>
@@ -457,23 +460,51 @@
     <div class="backdrop is-hidden" data-modal>
         <div class="modal modal-service">
             <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-            <form name="order-service" class="order-service" action="">
-                <div class="group" >
+            <form name="order-service" class="order-service" method="post" >
+                <div class="group" aria-labelledby="contact-details-head">
                         <label for="user-name">Имя</label>
-                        <input type="text" name="username" autofocus id="user-name" />
+                        <input type="text" 
+                        name="username" 
+                        autofocus 
+                        id="user-name" 
+                        class="form-input"
+                        placeholder="name"
+                        required/>
                        
                         <label for="user-tel">Телефон</label>
-                        <input type="tel" name="tel" id="user-tel" />
+                        <input type="tel"
+                         name="tel" 
+                         id="user-tel" 
+                         class="form-input"
+                         placeholder="tel"
+                         pattern=""
+                         required/>
 
                         <label for="user-email">Почта</label>
-                        <input type="email" name="email" id="user-email" />
+                        <input type="email" 
+                        name="email" 
+                        id="user-email" 
+                        class="form-input"
+                        placeholder="Email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        required/>
                 </div>
                         <label for="user-feedback">Комментарий</label>
-                        <textarea class="comment" name="feedback" id="user-feedback" rows="5" placeholder="Введите текст"></textarea>
+                        <textarea class="comment" 
+                        name="feedback" 
+                        id="user-feedback" 
+                        rows="5" 
+                        placeholder="Введите текст"
+                        class="form-input"></textarea>
                         
                         <div class="choice">
                             <label>
-                                <input type="checkbox" name="check" >
+                                <input class="form-input"
+                                 type="checkbox"
+                                  name="check" >
+                                <svg class="choice-icon" width="16" height="15">
+                                    <use href="./images/symbol-defs.svg#icon-check"></use>
+                                </svg>
                             </label>
                             <legend>Соглашаюсь с рассылкой и принимаю
                                 <a href="#" target="_balnk">Условия договора</a>

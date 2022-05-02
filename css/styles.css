@@ -586,33 +586,55 @@ footer .logo {
   fill: var(--social-color-hover);
 }
 
-.footer-email {
-  padding: 15px auto 15px 16px;
+.email-input {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.footer-input-email {
+  width: 358px;
+  height: 50px;
+  padding: 0;
   margin-right: 12px;
+  outline: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
   box-sizing: border-box;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
   border-radius: 4px;
+  background-color: transparent;
+}
+
+.footer-input-email::placeholder {
+  /* .footer-input-email[type='email'] { */
+  padding: 15px auto 15px 16px; /* не работает !!!!!!!!!!!!!*/
+  box-sizing: border-box;
+  color: var(--text-color-p);
+  background-color: transparent;
 }
 .btn-email-send {
-  padding: 10px auto;
-
+  width: 200px;
+  height: 50px;
+  padding: 0;
   font-weight: 700;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1.88;
   /* identical to box height, or 188% */
 
   display: flex;
+
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
 
   color: var(--btn-text-color);
   background: var(--accent-color);
+  border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
-
+.btn-email-send span {
+  margin: 10px 10px 10px 28px;
+}
 /* section Portfolio */
 .filter-list {
   display: flex;
@@ -685,7 +707,9 @@ footer .logo {
   display: block;
   min-width: 100%;
   height: auto;
-  /* overflow: hidden; */
+  /*transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ overflow: hidden; */
 }
 .card-thumb {
   position: relative;
@@ -725,7 +749,9 @@ footer .logo {
 }
 .portfolio-card .title {
   margin: 0;
-  color: var(--text-color-h);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
@@ -799,7 +825,14 @@ footer .logo {
   width: 18px;
   height: 18px;
   fill: var(--text-color-logo);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-icon:focus,
+.modal-icon:hover {
+  fill: var(--accent-color);
+  cursor: pointer;
+}
+
 @keyframes transformModal {
   0% {
     transform: scale(0) rotate(0deg);
@@ -841,18 +874,48 @@ footer .logo {
 .group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
 }
 .modal-service label {
   margin-bottom: 4px;
 }
-.group input {
+.form-input {
+  width: 100%;
   height: 40px;
+
   margin-bottom: 10px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.form-input[type='text'],
+.form-input[type='email'],
+.form-input[type='tel'] {
+  padding: 11px 12px;
+}
+.group input:active,
+.group input:hover,
+.group input:focus,
+.comment:active,
+.comment:focus,
+.comment:hover {
+  border: 1px solid var(--accent-color);
+}
+.form-input::placeholder {
+  margin: 11px auto 11px 12px;
+  color: var(--text-color-p);
+  background-color: transparent;
+}
+/* .form-input:placeholder-shown {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  background-color: transparent;
+} */
+/* 
+.form-input:not(:placeholder-shown) {
+  border: 1px solid var(--accent-color);
+} */
+
 .comment {
   height: 120px;
   padding: 12px 16px;
@@ -860,6 +923,8 @@ footer .logo {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-service legend {
   font-size: 14px;
@@ -878,11 +943,17 @@ footer .logo {
   margin: 0;
   margin-right: 8.38px;
 }
-.choice input[checkbox] {
+.choice input[type='checkbox'] {
+  width: 16px;
+  height: 15px;
   border: 1px solid var(--text-color-h);
-  background-color: #212121;
+  outline: none;
+  visibility: hidden;
+  /* background-color: var(); */
 }
-
+.choice-icon {
+  position: absolute;
+}
 .btn-submit {
   width: 200px;
   height: 50px;
