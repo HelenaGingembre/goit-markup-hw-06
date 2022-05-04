@@ -919,6 +919,7 @@ footer .logo {
 .comment:active,
 .comment:focus,
 .comment:hover {
+  background-color: transparent;
   border: 1px solid var(--accent-color);
 }
 
@@ -928,8 +929,10 @@ footer .logo {
 .form-input:not(:placeholder-shown) + .form-input-icon {
   fill: var(--accent-color);
 }
-.form-input:not(:placeholder-shown) {
+.form-input:not(:placeholder-shown),
+.comment:not(:placeholder-shown) {
   border: 1px solid var(--accent-color);
+  background-color: transparent;
 }
 .form-field:focus-within > .form-input-icon {
   fill: var(--accent-color);
