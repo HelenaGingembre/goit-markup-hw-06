@@ -1009,6 +1009,9 @@ footer .logo {
   opacity: 1;
   transform: translateY(-50%);
 }
+legend a {
+  color: var(--accent-color);
+}
 .btn-submit {
   width: 200px;
   height: 50px;
