@@ -460,9 +460,9 @@
     <!--модальне вікно-->
     <div class="backdrop is-hidden" data-modal>
         <div class="modal modal-service">
-            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <p class="modal-title">Оставьте свои данные, мы вам перезвоним</p>
             <form name="order-service" class="order-service" method="post" >
-                <div class="group" aria-labelledby="contact-details-head">
+                <div class="group" >
                     <div class="form-field">
                        <label for="user-name" class="form-label">Имя</label>
                         <input type="text" 
@@ -507,31 +507,28 @@
                         </svg>
                     </div>
                 </div>
+                    <div class="form-field">
                         <label for="user-feedback" class="form-label">Комментарий</label>
-                        <textarea class="comment" 
-                        name="feedback" 
+                        <textarea
+                        class="comment" 
+                        name="user-feedback" 
                         id="user-feedback" 
-                        rows="5" 
-                        placeholder="Введите текст"
-                        class="form-input"></textarea>
-                        
-                        <div class="choice">
-                           
-                               
-                                <label class="choice-label">
+                        placeholder="Введите текст">
+                        </textarea>
+                    </div>
+                    <div class="choice">
+                        <label class="choice-label">
                                     <input class="checkbox" type="checkbox" name="check">
                                     <span class="checkbox-icon">
                                         <svg  width="16" height="15">
                                             <use href="./images/symbol-defs.svg#icon-check"></use>
                                         </svg>
                                     </span>
-                               
+                                  Соглашаюсь с рассылкой и принимаю
+                                <a href="#" target="_balnk" rel="noopener noreferrer" >Условия договора</a>
                             
-                            <legend>Соглашаюсь с рассылкой и принимаю
-                                <a href="#" target="_balnk">Условия договора</a>
-                            </legend>
                             </label>
-                        </div>
+                    </div>
 
                         <button type="submit" class="btn-submit ">Отправить</button>
                 
