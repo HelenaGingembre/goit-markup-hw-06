@@ -595,6 +595,9 @@ footer .logo {
   padding: 0;
   padding-left: 16px;
   margin-right: 12px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
