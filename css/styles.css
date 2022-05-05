@@ -923,7 +923,6 @@ footer .logo {
   outline: none;
   cursor: pointer;
   resize: none;
-  color: var(--form-color-placeholder);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -937,11 +936,10 @@ footer .logo {
 }
 .form-input:active,
 .form-input:hover,
-.form-input:focus
-/* ,
+.form-input:focus,
 .comment:active,
 .comment:focus,
-.comment:hover  */ {
+.comment:hover {
   background-color: transparent;
   border: 1px solid var(--accent-color);
 }
@@ -952,20 +950,17 @@ footer .logo {
 .form-input:not(:placeholder-shown) + .form-input-icon {
   fill: var(--accent-color);
 }
-/* :placeholder-shown 
+/* :placeholder-shown (показывается)
 Вводите текст в поля формы 
 и цвет рамки поля изменится
  на синий как только пропадёт плейсхолдер. */
-.form-input:placeholder-shown
-/* ,
-.comment:placeholder-shown  */ {
+.form-input:placeholder-shown {
   border: 1px solid rgba(33, 33, 33, 0.2);
   background-color: var(--bg-color-main);
 }
-
-.form-input:not(:placeholder-shown)
-/* ,
-.comment:not(:placeholder-shown) */ {
+/* :not(:placeholder-shown) ( пропадает)*/
+.form-input:not(:placeholder-shown),
+.comment:not(:placeholder-shown) {
   border: 1px solid var(--accent-color);
   background-color: transparent;
 }
